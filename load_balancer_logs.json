@@ -1,0 +1,105 @@
+{
+  "preview": false,
+  "result": {
+    "_raw": "{\"version\": \"2.0.0\", \"name\": \"loadbalancer-access-logs\", \"type\": \"log\", \"timestamp\": \"2019-11-20T17:19:03.023797Z\", \"level\": \"warning\", \"host\": {\"cluster\": \"eks-squad2\"}, \"message\": \"h2 2019-11-20T17:19:03.023797Z app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8 66.78.209.106:52302 10.32.136.164:30069 0.004 65.686 0.000 404 404 104857904 183 PUT https://h.squad2.workiva.org:443/slow_uploads/uploadfile/ HTTP/2.0 python-requests/2.22.0 ECDHE-RSA-AES128-GCM-SHA256 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657 Root=1-5dd57545-fe646370048c1c38c6e1f9c0 h.squad2.workiva.org arn:aws:acm:us-west-2:663511558366:certificate/d45791b8-a213-4547-a457-36d73ab1608e 0 2019-11-20T17:17:57.334000Z forward - - 10.32.136.164:30069 404\", \"metadata\": {\"protocol\": \"h2\", \"elb_id\": \"app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8\", \"client_ip\": \"66.78.209.106\", \"client_port\": \"52302\", \"target_ip\": \"10.32.136.164\", \"target_port\": \"30069\", \"request_processing_time\": \"0.004\", \"target_processing_time\": \"65.686\", \"response_processing_time\": \"0.000\", \"elb_status_code\": \"404\", \"target_status_code\": \"404\", \"received_bytes\": \"104857904\", \"sent_bytes\": \"183\", \"method\": \"PUT\", \"url\": \"https://h.squad2.workiva.org:443/slow_uploads/uploadfile/\", \"http_version\": \"HTTP/2.0\", \"user_agent\": \"python-requests/2.22.0\", \"ssl_cipher\": \"ECDHE-RSA-AES128-GCM-SHA256\", \"ssl_protocol\": \"TLSv1.2\", \"target_group_arn\": \"arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657\", \"trace_id\": \"Root=1-5dd57545-fe646370048c1c38c6e1f9c0\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270402, \"lambda_timestamp\": 1574270403}",
+    "_time": "2019-11-20T11:19:03.023-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-c7"
+  }
+}
+{
+  "preview": false,
+  "result": {
+    "_raw": "{\"host\": {\"fqdn\": \"ip-10-32-128-153.us-west-2.compute.internal\", \"id\": \"i-052d6d592a0dd9666\", \"cluster\": \"eks-squad2\", \"harbour\": \"squad2-cf\", \"zone\": \"us-west-2c\"}, \"container\": {\"id\": \"1554800cdeb5\", \"source\": \"stderr\", \"name\": \"k8s-nginx-ingress-controller\"}, \"level\": \"warning\", \"timestamp\": \"2019-11-20T17:17:57.367278Z\", \"type\": \"log\", \"version\": \"2.0.0\", \"source\": \"container\", \"message\": \"2019/11/20 17:17:57 [warn] 51#51: *27931 a client request body is buffered to a temporary file /tmp/client-body/0000000066, client: 127.0.0.1, server: h.squad2.workiva.org, request: \\\"PUT /slow_uploads/uploadfile/ HTTP/1.1\\\", host: \\\"h.squad2.workiva.org\\\"\\n\", \"name\": \"local1\", \"service\": {\"name\": \"k8s-nginx-ingress\", \"app\": \"k8s-nginx-ingress\", \"namespace\": \"workiva\"}, \"pod\": {\"name\": \"k8s-nginx-ingress-controller-658f76557d-xgx62\", \"ip\": \"\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270324, \"lambda_timestamp\": 1574270325}",
+    "_time": "2019-11-20T11:17:57.367-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "k8s-nginx-ingress",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-b3"
+  }
+}
+{
+  "preview": false,
+  "result": {
+    "_raw": "{\"version\": \"2.0.0\", \"name\": \"loadbalancer-access-logs\", \"type\": \"log\", \"timestamp\": \"2019-11-20T17:17:38.832983Z\", \"level\": \"warning\", \"host\": {\"cluster\": \"eks-squad2\"}, \"message\": \"h2 2019-11-20T17:17:38.832983Z app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8 66.78.209.102:52299 10.32.78.198:30069 0.007 -1 -1 400 - 2108550 0 PUT https://h.squad2.workiva.org:443/slow_uploads/uploadfile/ HTTP/2.0 python-requests/2.22.0 ECDHE-RSA-AES128-GCM-SHA256 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657 Root=1-5dd57531-355388f1bdb6ef7f986663a7 h.squad2.workiva.org arn:aws:acm:us-west-2:663511558366:certificate/d45791b8-a213-4547-a457-36d73ab1608e 0 2019-11-20T17:17:37.290000Z forward - - 10.32.78.198:30069 -\", \"metadata\": {\"protocol\": \"h2\", \"elb_id\": \"app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8\", \"client_ip\": \"66.78.209.102\", \"client_port\": \"52299\", \"target_ip\": \"10.32.78.198\", \"target_port\": \"30069\", \"request_processing_time\": \"0.007\", \"target_processing_time\": \"-1\", \"response_processing_time\": \"-1\", \"elb_status_code\": \"400\", \"target_status_code\": \"-\", \"received_bytes\": \"2108550\", \"sent_bytes\": \"0\", \"method\": \"PUT\", \"url\": \"https://h.squad2.workiva.org:443/slow_uploads/uploadfile/\", \"http_version\": \"HTTP/2.0\", \"user_agent\": \"python-requests/2.22.0\", \"ssl_cipher\": \"ECDHE-RSA-AES128-GCM-SHA256\", \"ssl_protocol\": \"TLSv1.2\", \"target_group_arn\": \"arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657\", \"trace_id\": \"Root=1-5dd57531-355388f1bdb6ef7f986663a7\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270404, \"lambda_timestamp\": 1574270405}",
+    "_time": "2019-11-20T11:17:38.832-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-a8"
+  }
+}
+{
+  "preview": false,
+  "result": {
+    "_raw": "{\"host\": {\"fqdn\": \"ip-10-32-128-153.us-west-2.compute.internal\", \"id\": \"i-052d6d592a0dd9666\", \"cluster\": \"eks-squad2\", \"harbour\": \"squad2-cf\", \"zone\": \"us-west-2c\"}, \"container\": {\"id\": \"1554800cdeb5\", \"source\": \"stderr\", \"name\": \"k8s-nginx-ingress-controller\"}, \"level\": \"warning\", \"timestamp\": \"2019-11-20T17:17:37.323576Z\", \"type\": \"log\", \"version\": \"2.0.0\", \"source\": \"container\", \"message\": \"2019/11/20 17:17:37 [warn] 51#51: *27843 a client request body is buffered to a temporary file /tmp/client-body/0000000065, client: 127.0.0.1, server: h.squad2.workiva.org, request: \\\"PUT /slow_uploads/uploadfile/ HTTP/1.1\\\", host: \\\"h.squad2.workiva.org\\\"\\n\", \"name\": \"local1\", \"service\": {\"name\": \"k8s-nginx-ingress\", \"app\": \"k8s-nginx-ingress\", \"namespace\": \"workiva\"}, \"pod\": {\"name\": \"k8s-nginx-ingress-controller-658f76557d-xgx62\", \"ip\": \"\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270264, \"lambda_timestamp\": 1574270264}",
+    "_time": "2019-11-20T11:17:37.323-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "k8s-nginx-ingress",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-c5"
+  }
+}
+{
+  "preview": false,
+  "result": {
+    "_raw": "{\"version\": \"2.0.0\", \"name\": \"loadbalancer-access-logs\", \"type\": \"log\", \"timestamp\": \"2019-11-20T17:15:13.474728Z\", \"level\": \"warning\", \"host\": {\"cluster\": \"eks-squad2\"}, \"message\": \"https 2019-11-20T17:15:13.474728Z app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8 66.78.209.98:52288 10.32.37.190:30069 0.004 15.875 0.000 404 404 104858050 288 PUT https://h.squad2.workiva.org:443/slow_uploads/uploadfile/ HTTP/1.1 python-requests/2.22.0 ECDHE-RSA-AES128-GCM-SHA256 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657 Root=1-5dd57491-09b8c22077abcae8f9ca92c4 h.squad2.workiva.org arn:aws:acm:us-west-2:663511558366:certificate/d45791b8-a213-4547-a457-36d73ab1608e 0 2019-11-20T17:14:57.596000Z forward - - 10.32.37.190:30069 404\", \"metadata\": {\"protocol\": \"https\", \"elb_id\": \"app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8\", \"client_ip\": \"66.78.209.98\", \"client_port\": \"52288\", \"target_ip\": \"10.32.37.190\", \"target_port\": \"30069\", \"request_processing_time\": \"0.004\", \"target_processing_time\": \"15.875\", \"response_processing_time\": \"0.000\", \"elb_status_code\": \"404\", \"target_status_code\": \"404\", \"received_bytes\": \"104858050\", \"sent_bytes\": \"288\", \"method\": \"PUT\", \"url\": \"https://h.squad2.workiva.org:443/slow_uploads/uploadfile/\", \"http_version\": \"HTTP/1.1\", \"user_agent\": \"python-requests/2.22.0\", \"ssl_cipher\": \"ECDHE-RSA-AES128-GCM-SHA256\", \"ssl_protocol\": \"TLSv1.2\", \"target_group_arn\": \"arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657\", \"trace_id\": \"Root=1-5dd57491-09b8c22077abcae8f9ca92c4\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270411, \"lambda_timestamp\": 1574270412}",
+    "_time": "2019-11-20T11:15:13.474-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-c7"
+  }
+}
+{
+  "preview": false,
+  "result": {
+    "_raw": "{\"host\": {\"fqdn\": \"ip-10-32-128-153.us-west-2.compute.internal\", \"id\": \"i-052d6d592a0dd9666\", \"cluster\": \"eks-squad2\", \"harbour\": \"squad2-cf\", \"zone\": \"us-west-2c\"}, \"container\": {\"id\": \"1554800cdeb5\", \"source\": \"stderr\", \"name\": \"k8s-nginx-ingress-controller\"}, \"level\": \"warning\", \"timestamp\": \"2019-11-20T17:14:57.635881Z\", \"type\": \"log\", \"version\": \"2.0.0\", \"source\": \"container\", \"message\": \"2019/11/20 17:14:57 [warn] 51#51: *27199 a client request body is buffered to a temporary file /tmp/client-body/0000000063, client: 127.0.0.1, server: h.squad2.workiva.org, request: \\\"PUT /slow_uploads/uploadfile/ HTTP/1.1\\\", host: \\\"h.squad2.workiva.org\\\"\\n\", \"name\": \"local1\", \"service\": {\"name\": \"k8s-nginx-ingress\", \"app\": \"k8s-nginx-ingress\", \"namespace\": \"workiva\"}, \"pod\": {\"name\": \"k8s-nginx-ingress-controller-658f76557d-xgx62\", \"ip\": \"\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270144, \"lambda_timestamp\": 1574270144}",
+    "_time": "2019-11-20T11:14:57.635-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "k8s-nginx-ingress",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-a9"
+  }
+}
+{
+  "preview": false,
+  "result": {
+    "_raw": "{\"version\": \"2.0.0\", \"name\": \"loadbalancer-access-logs\", \"type\": \"log\", \"timestamp\": \"2019-11-20T17:14:12.805167Z\", \"level\": \"warning\", \"host\": {\"cluster\": \"eks-squad2\"}, \"message\": \"https 2019-11-20T17:14:12.805167Z app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8 66.78.209.106:52269 10.32.181.215:30069 0.004 -1 -1 400 - 89219352 0 PUT https://h.squad2.workiva.org:443/slow_uploads/uploadfile/ HTTP/1.1 python-requests/2.22.0 ECDHE-RSA-AES128-GCM-SHA256 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657 Root=1-5dd5745b-bbeca2d3a7d247d8901776f6 h.squad2.workiva.org arn:aws:acm:us-west-2:663511558366:certificate/d45791b8-a213-4547-a457-36d73ab1608e 0 2019-11-20T17:14:03.423000Z forward - - 10.32.181.215:30069 -\", \"metadata\": {\"protocol\": \"https\", \"elb_id\": \"app/eks-squ-ALB-1RW20SU76D132/c153686613177cc8\", \"client_ip\": \"66.78.209.106\", \"client_port\": \"52269\", \"target_ip\": \"10.32.181.215\", \"target_port\": \"30069\", \"request_processing_time\": \"0.004\", \"target_processing_time\": \"-1\", \"response_processing_time\": \"-1\", \"elb_status_code\": \"400\", \"target_status_code\": \"-\", \"received_bytes\": \"89219352\", \"sent_bytes\": \"0\", \"method\": \"PUT\", \"url\": \"https://h.squad2.workiva.org:443/slow_uploads/uploadfile/\", \"http_version\": \"HTTP/1.1\", \"user_agent\": \"python-requests/2.22.0\", \"ssl_cipher\": \"ECDHE-RSA-AES128-GCM-SHA256\", \"ssl_protocol\": \"TLSv1.2\", \"target_group_arn\": \"arn:aws:elasticloadbalancing:us-west-2:663511558366:targetgroup/eks-s-ALBDe-1JWIUYT93C9G/a978ecc5165e0657\", \"trace_id\": \"Root=1-5dd5745b-bbeca2d3a7d247d8901776f6\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270102, \"lambda_timestamp\": 1574270103}",
+    "_time": "2019-11-20T11:14:12.805-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-b3"
+  }
+}
+{
+  "preview": false,
+  "lastrow": true,
+  "result": {
+    "_raw": "{\"host\": {\"fqdn\": \"ip-10-32-128-153.us-west-2.compute.internal\", \"id\": \"i-052d6d592a0dd9666\", \"cluster\": \"eks-squad2\", \"harbour\": \"squad2-cf\", \"zone\": \"us-west-2c\"}, \"container\": {\"id\": \"1554800cdeb5\", \"source\": \"stderr\", \"name\": \"k8s-nginx-ingress-controller\"}, \"level\": \"warning\", \"timestamp\": \"2019-11-20T17:14:03.455775Z\", \"type\": \"log\", \"version\": \"2.0.0\", \"source\": \"container\", \"message\": \"2019/11/20 17:14:03 [warn] 51#51: *26980 a client request body is buffered to a temporary file /tmp/client-body/0000000061, client: 127.0.0.1, server: h.squad2.workiva.org, request: \\\"PUT /slow_uploads/uploadfile/ HTTP/1.1\\\", host: \\\"h.squad2.workiva.org\\\"\\n\", \"name\": \"local1\", \"service\": {\"name\": \"k8s-nginx-ingress\", \"app\": \"k8s-nginx-ingress\", \"namespace\": \"workiva\"}, \"pod\": {\"name\": \"k8s-nginx-ingress-controller-658f76557d-xgx62\", \"ip\": \"\"}, \"aws_account_id\": \"663511558366\", \"aws_account_name\": \"DEV\", \"lambda_func_version\": \"8e4bf74\", \"lambda_approximate_arrival\": 1574270084, \"lambda_timestamp\": 1574270084}",
+    "_time": "2019-11-20T11:14:03.455-0600",
+    "host": "eks-squad2-logging",
+    "index": "kinesis-squad2",
+    "linecount": "1",
+    "source": "k8s-nginx-ingress",
+    "sourcetype": "json",
+    "splunk_server": "splk-indexer-b3"
+  }
+}
