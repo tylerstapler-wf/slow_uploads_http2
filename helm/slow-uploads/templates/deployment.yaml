@@ -1,0 +1,72 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "template.fullname" . }}
+  labels:
+    app: {{ template "template.name" . }}
+    chart: {{ template "template.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ template "template.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "template.name" . }}
+        release: {{ .Release.Name }}
+      annotations:
+        # By default, kubernetes will not reload pods when secrets change. We need to
+        # take the hash of the secrets and configs we depend on in order to trigger a reload.
+        # https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md#automatically-roll-deployments-when-configmaps-or-secrets-change
+        checksum/secrets: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
+        {{- if .Values.iamRole }}
+        iam.amazonaws.com/role: "{{ .Values.iamRole }}"
+        {{- end }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          {{- if .Values.image.override }}
+          image: '{{ .Values.image.override }}'
+          {{- else }}
+          image: '{{ .Values.image.registry }}/{{ .Values.image.repo }}:{{ .Values.image.tag }}'
+          {{- end }}
+          imagePullPolicy: Always
+          ports:
+            - name: http 
+              containerPort: 8000
+          env:
+            - name: MSG_URL
+              value: "tls://nats-nats.workiva.svc.cluster.local:4222"
+            - name: MSG_CA_CERT
+              value: "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+            - name: MSG_HEALTH_TOPIC
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            {{- range $key, $value := .Values.environment }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+            {{- end }}
+            {{- range $key, $value := .Values.secrets }}
+            - name: {{ $key }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "template.fullname" $ }}
+                  key: {{ $key }}
+            {{- end }}
+          {{- if .Values.readinessProbe }}
+          readinessProbe:
+{{ toYaml .Values.readinessProbe | trimSuffix "\n" | indent 12 }}
+          {{- end }}
+          {{- if .Values.livenessProbe }}
+          livenessProbe:
+{{ toYaml .Values.livenessProbe | trimSuffix "\n" | indent 12 }}
+          {{- end }}
+          {{- if .Values.resources }}
+          resources:
+{{ toYaml .Values.resources | trimSuffix "\n" | indent 12 }}
+          {{- end }}

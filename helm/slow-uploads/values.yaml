@@ -1,0 +1,49 @@
+---
+# Default values for template.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Docker image to run.
+image:
+  registry: docker.workiva.net
+  repo: tylerstapler-wf/slow_uploads
+  tag: 'dev'
+  # Uncomment to specify a full docker image for local development
+  # override: local_testing_image_name:latest
+
+# Number of pods replicas to run. If your service can handle more than 1,
+# run at least 3 for high-availability.
+# TODO
+replicas: 1
+
+# The minimum number of available pods during updates
+minAvailable: 0
+
+# Ingress configuration
+# See: https://kubernetes.io/docs/concepts/services-networking/ingress/
+ingress:
+  # Base domain for the cluster (ex. wk-dev.wdesk.org, app.wdesk.org).
+  clusterDomain: ''
+  rules:
+    # Rules for h.<clusterDomain> (ex. h.wk-dev.wdesk.org).
+    # TODO : Update backends and potentially pathPrefix for your PBR routes
+    - subDomain: h
+      pathPrefix: /s/slow_uploads
+      backends:
+        - path: /
+          port: 8000
+
+# Environment variables.
+environment:
+  # The base url that the server should listen on
+  BASE_PATH: '/s/slow_uploads/'
+
+# Resources allocated to your container.
+# See: https://kubernetes.io/docs/concepts/policy/resource-quotas/
+resources:
+  limits:
+    cpu: 1.00
+    memory: 1024Mi
+  requests:
+    cpu: 1.00
+    memory: 1024Mi

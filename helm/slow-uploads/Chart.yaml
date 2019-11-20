@@ -1,0 +1,44 @@
+apiVersion: v1
+name: slow-uploads
+description: A Helm chart for slow-uploads
+version: '0.1.0'
+
+# Update with your team name, i.e. infeng, testeng
+# You should be able to find your teams abbreviation in
+# https://w-rmconsole.appspot.com/api/internal/settings/release_teams/
+team: qat
+
+# Workiva specific key to specify how availability checks will communicate with your service.
+#
+# This option is to inform our automated availability checker how best to contact your service. On deployment, our
+# system will automatically create a signals plan that will monitor the availability of your service by connecting to 
+# it through the option specified here. If your service can be contacted in multiple ways, you can choose any of those
+# options, eventually an availability endpoint will need to be created on that option, however more communication will
+# be released as this tool gets closer to completion.
+# 
+# TODO : Uncomment the appropriate serviceAvailability blocks below, and remove the others
+
+# http_public - The service is publicly exposed, and can be reached with HTTPS requests.
+# serviceAvailability:
+#   type: http_public
+
+# http_private - The service is not publicly exposed. Other services communicate to it with HTTP requests.
+# serviceAvailability:
+#   type: http_private
+#   port: &lt;31200>
+
+# frugal_nats - The service is not publicly exposed.  Other services communicate to it using NATS.
+# serviceAvailability:
+#   type: frugal_nats
+
+# frugal_http - The service is not publicly exposed.  Other services communicate to it using a messaging http client.
+# serviceAvailability:
+#   type: frugal_http
+#   domain: <http://my_service.app>
+#   path: </frugal>
+#   port: &lt;31200>
+ 
+# serverless - The service is run on Lambda or Bolt.
+# serviceAvailability:
+#   type: serverless
+
