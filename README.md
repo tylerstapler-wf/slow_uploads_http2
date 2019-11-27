@@ -14,7 +14,7 @@ I build a simple server using FastAPI which just reads file uploads and throws a
 
 If you don't care to set up the server you can test against a deployed version of the service at this url https://h.squad2.workiva.org/slow_uploads/uploadfile/
 
-Skip to [Configuring the client][#configuring-the-client] to get started sending data.
+Skip to [Configuring the client](#configuring-the-client) to get started sending data.
 
 ## Setting up the server
 
