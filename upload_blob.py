@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
+import os
 import requests
 import datetime
+from urllib.parse import urlsplit
 # Hyper adds support for http2 to python's requestssts library
-from hyper.contrib import HTTP20Adapter
+from hyper.contrib import HTTP20Adapter, HTTPConnection
+from hyper.http20.window import FlowControlManager
 from requests_toolbelt import MultipartEncoder
 # sslkeylog handles logging out the client pre-master secret
 # so we can decrypt the traffic later.

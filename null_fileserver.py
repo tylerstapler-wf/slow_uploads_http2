@@ -13,7 +13,7 @@ async def home():
     return {"hello": "world"}
 
 
-@app.put(f"{BASE_PATH}uploadfile/")
+@app.put(f"{BASE_PATH}uploadfile/", status_code=200)
 async def create_upload_file(file: UploadFile = File(...)):
     await file.read()
     return

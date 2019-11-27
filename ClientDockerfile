@@ -1,0 +1,9 @@
+FROM python:3.7
+ARG NGHTTP2=yes
+COPY debian_install_nghttp2.sh .
+RUN if [ "$NGHTTP2" = yes ]; then ./debian_install_nghttp2.sh; fi
+WORKDIR /working
+COPY client_requirements.txt .
+RUN pip install -r client_requirements.txt
+RUN pip freeze
+COPY upload_blob.py .
