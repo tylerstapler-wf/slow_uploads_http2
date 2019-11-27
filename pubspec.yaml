@@ -1,0 +1,10 @@
+---
+name: slow_uploads_http2
+
+environment:
+  sdk: '>=2.6.0 <3.0.0'
+
+dependencies:
+  args: ^1.5.0
+  dio: ^3.0.0
+  dio_http2_adapter: ^1.0.0
